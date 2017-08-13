@@ -158,7 +158,7 @@ public class Account {
 	 * @return the password
 	 */
 //	@Column(columnDefinition = "varchar(255) default gen_salt('bf', 8)", insertable = false, updatable = false)
-	@Column(columnDefinition = "varchar(255)", insertable = false, updatable = false)
+	@Column(columnDefinition = "varchar(255)")
 	public String getPassword() {
 		return m_Password;
 	}
