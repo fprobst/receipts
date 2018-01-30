@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     
-    working_directory: ~/receipts/reciept-service
+    working_directory: ~/receipts
 
     docker:
       - image: circleci/openjdk:8-jdk-browsers
@@ -18,17 +18,17 @@ jobs:
       - restore_cache:
           key: reciept-service-v1
       
-      - run: mvn dependency:go-offline
+      - run: mvn -f reciept-service/pom.xml dependency:go-offline
       
       - save_cache:
           paths:
             - ~/.m2
           key: receipt-service-v1
       
-      - run: mvn package
+      - run: mvn -f reciept-service/pom.xml package
       
       - store_test_results:
-          path: target/surefire-reports
+          path: reciept-service/target/surefire-reports
       
       - store_artifacts:
-          path: target/receipt-service-1.0.0-SNAPSHOT.jar
+          path: reciept-service/target/receipt-service-1.0.0-SNAPSHOT.jar
