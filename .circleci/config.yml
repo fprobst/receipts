@@ -16,14 +16,14 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: reciept-service-{{ checksum "pom.xml" }}
+          key: reciept-service-v1
       
       - run: mvn dependency:go-offline
       
       - save_cache:
           paths:
             - ~/.m2
-          key: receipt-service-{{ checksum "pom.xml" }}
+          key: receipt-service-v1
       
       - run: mvn package
       
