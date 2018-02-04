@@ -8,10 +8,10 @@ spring:
     pool-size: 2
   jpa:
     generate-ddl: true
-  	show-sql: true
-  	hibernate:
-  	  dialect: org.hibernate.dialect.PostgreSQLDialect
-  	  ddl-auto: create-drop
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: create-drop
 # Spring Security configuration
 security:
   oauth2:
