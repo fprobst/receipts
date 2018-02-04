@@ -7,3 +7,6 @@ before_script:
   - psql -c 'create database reciepts_test;' -U postgres
 jdk:
   - oraclejdk8
+cache:
+  directories:
+  - $HOME/.m2
