@@ -1,4 +1,6 @@
 language: java
+install: Maven
+script mvn -f reciept-service/pom.xml test -B 
 services:
   - postgresql
 jdk:
